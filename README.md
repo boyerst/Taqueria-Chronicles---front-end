@@ -2,13 +2,12 @@
                                       **WIRE FRAMES**
 
 
-https://github.com/boyerst/Taqueria-Chronicles---front-end/issues/1
 
-![alt text](https://imgur.com/4jOz3n5 "")
-![alt text](https://imgur.com/aDkH5x2 "")
-![alt text](https://imgur.com/ixdbXvD "")
-![alt text](https://imgur.com/nFcgbyD "")
-![alt text](https://imgur.com/JQ7MqRC "")
+![alt text](https://i.imgur.com/4jOz3n5.jpg )
+![alt text](https://i.imgur.com/aDkH5x2.jpg )
+![alt text](https://i.imgur.com/ixdbXvD.jpg )
+![alt text](https://i.imgur.com/nFcgbyD.jpg )
+![alt text](https://i.imgur.com/JQ7MqRC.jpg )
 
 
 
