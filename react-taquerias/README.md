@@ -41,6 +41,8 @@ https://github.com/boyerst/Taqueria-Chronicles---front-end/issues/1
 
     * Clicking this button will instantly delete the targeted Taquerias
 
+* The user will be able to logout anytime via a 'logout link' on the top of the page
+
 
 STRETCH:
 Import star icons for rating system
