@@ -14,6 +14,8 @@ https://github.com/boyerst/Taqueria-Chronicles---front-end/issues/1
 
 * Upon launching, the user is sent to a single page React application
 
+* The user is given an option to either log in or register
+
 * User can keep track of their favorite Taquerias in Chicago by storing them in the app's database
 
 * User will be able to add a Taqueria by using the CREATE(/taquerias) route
