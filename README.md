@@ -4,7 +4,11 @@
 
 https://github.com/boyerst/Taqueria-Chronicles---front-end/issues/1
 
-
+![alt text](https://imgur.com/4jOz3n5 "")
+![alt text](https://imgur.com/aDkH5x2 "")
+![alt text](https://imgur.com/ixdbXvD "")
+![alt text](https://imgur.com/nFcgbyD "")
+![alt text](https://imgur.com/JQ7MqRC "")
 
 
 
