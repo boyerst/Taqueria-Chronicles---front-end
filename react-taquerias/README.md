@@ -1,4 +1,15 @@
                  
+                                      **WIRE FRAMES**
+
+
+https://github.com/boyerst/Taqueria-Chronicles---front-end/issues/1
+
+
+
+
+
+
+
                             **TAQUERIA CHRONICLES - User Story**
 
 * Upon launching, the user is sent to a single page React application
@@ -9,13 +20,12 @@
   
   * There will be a link on the main INDEX(/taquerias) page that will reveal a modal showing all inputs for the user to add a Taqueria
 
-  * User will be able to enter these values for each Taqueria: Address, Rating, Recommendations
+  * User will be able to enter these values for each Taqueria: Name, Address, Rating, Recommendations
 
-* After entering information into the app database, the user will be able to view their posts with two different methods:
+* After entering information into the app database, the user will be able to view their posts:
   
   * From the main INDEX(/taquerias) route: each Taqueria will live on a 'card' on the main page
 
-  * From the SHOW(/taquerias/id) route: If the user only wants to view one Taqueria, they can click on a link that will reveal a modal that displays a singular Taqueria
 
 * If the user wishes to, they will also have the ability to alter the information they have entered into the database.
 
@@ -27,4 +37,10 @@
 
   * Delete button: by using the DELETE(/taqueria/id) route, the user may delete any previously entered Taqueria 'cards'
 
-    * Clicking this button will instantly delete the targeted Taqueriasubl .
+    * Clicking this button will instantly delete the targeted Taquerias
+
+
+STRETCH:
+Import star icons for rating system
+
+
