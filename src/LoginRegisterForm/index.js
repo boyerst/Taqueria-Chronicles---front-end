@@ -40,6 +40,8 @@ export default class LoginRegisterForm extends Component {
             {this.state.action==="Register"
             &&
               <Form.Input
+                name="username"
+                type="text"
                 fluid icon="user"
                 iconPosition="left"
                 placeholder="Username"
@@ -48,6 +50,8 @@ export default class LoginRegisterForm extends Component {
               />
             }
             <Form.Input
+              name="email"
+              type="email"
               fluid icon="address book"
               iconPosition="left"
               placeholder="Email address"
@@ -55,6 +59,8 @@ export default class LoginRegisterForm extends Component {
               onChange={this.handleChange}
             />
             <Form.Input
+              name="password"
+              type="password"
               fluid icon="key"
               iconPosition="left"
               placeholder="Password"
@@ -73,7 +79,7 @@ export default class LoginRegisterForm extends Component {
           ?
           <Message>
           Need an account? <a href="" onClick={this.changeForm}>Register</a>
-          </Message>
+          </Message> //change <a>s to span with class if have issues in future
           :
           <Message>
           Already registered? <a href="" onClick={this.changeForm}>Log In</a>
