@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import TaqueriaContainer from './TaqueriaContainer'
+import LoginRegisterForm from './LoginRegisterForm'
 
-function App() {
-  console.log(process.env)
-  return (
-    <div className="App">
-      <TaqueriaContainer />
-    </div>
-  );
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = { 
+      loggedIn: false, 
+      loggedInUserEmail: ''
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+      {
+        this.state.loggedIn
+        ?
+        <TaqueriaContainer />
+        :
+        <LoginRegisterForm /> 
+        // <TaqueriaContainer /> 
+      }
+      </div>
+    )
+  }
 }
-
-export default App;
