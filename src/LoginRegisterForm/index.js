@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Form, Button, Grid, Segment, Header, Message } from 'semantic-ui-react'
+import { Form, Button, Grid, Segment, Message } from 'semantic-ui-react'
 
 
 export default class LoginRegisterForm extends Component {
@@ -30,13 +30,19 @@ export default class LoginRegisterForm extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(`You are attempting to ${this.state.action.toLowerCase()} with these inputs`)
+    console.log(this.state)
+  }
+
   render() {
     return (
     <Grid centered columns={2}>
       <Grid.Column>
         
         <Segment>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
             {this.state.action==="Register"
             &&
               <Form.Input
@@ -64,7 +70,6 @@ export default class LoginRegisterForm extends Component {
               fluid icon="key"
               iconPosition="left"
               placeholder="Password"
-              type="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
@@ -78,11 +83,11 @@ export default class LoginRegisterForm extends Component {
           this.state.action==="Login"
           ?
           <Message>
-          Need an account? <a href="" onClick={this.changeForm}>Register</a>
+          Need an account? <span className="link" onClick={this.changeForm}>Register</span>
           </Message> //change <a>s to span with class if have issues in future
           :
           <Message>
-          Already registered? <a href="" onClick={this.changeForm}>Log In</a>
+          Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
           </Message>
         }
         </Message>
