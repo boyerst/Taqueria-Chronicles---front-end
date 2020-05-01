@@ -12,7 +12,7 @@ export default class LoginRegisterForm extends Component {
       email: '',
       password: '',
       username: '',
-      action: 'Register'
+      action: 'Login'
     }
   }
 
@@ -22,6 +22,12 @@ export default class LoginRegisterForm extends Component {
     } else {
       this.setState({action: "Login"})
     }
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   }
 
   render() {
@@ -38,6 +44,7 @@ export default class LoginRegisterForm extends Component {
                 iconPosition="left"
                 placeholder="Username"
                 value={this.state.Username}
+                onChange={this.handleChange}
               />
             }
             <Form.Input
@@ -45,6 +52,7 @@ export default class LoginRegisterForm extends Component {
               iconPosition="left"
               placeholder="Email address"
               value={this.state.email}
+              onChange={this.handleChange}
             />
             <Form.Input
               fluid icon="key"
@@ -52,6 +60,7 @@ export default class LoginRegisterForm extends Component {
               placeholder="Password"
               type="password"
               value={this.state.password}
+              onChange={this.handleChange}
             />
             <Button type= "Submit" color="green" fluid size="large">
               {this.state.action==="Login" ? "Log In": "Register"}
@@ -63,11 +72,11 @@ export default class LoginRegisterForm extends Component {
           this.state.action==="Login"
           ?
           <Message>
-          Need an account? <a href="">Register</a>
+          Need an account? <a href="" onClick={this.changeForm}>Register</a>
           </Message>
           :
           <Message>
-          Already registered? <a href="">Log In</a>
+          Already registered? <a href="" onClick={this.changeForm}>Log In</a>
           </Message>
         }
         </Message>
