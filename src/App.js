@@ -11,6 +11,15 @@ export default class App extends Component {
       loggedInUserEmail: ''
     }
   }
+
+  register = (registrationData) => {
+    console.log("Here is the lifted registration data from app.js:", registrationData)
+  }
+
+  login = (loginData) => {
+    console.log("Here is the lifted login data from app.js:", loginData)
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,7 +28,10 @@ export default class App extends Component {
         ?
         <TaqueriaContainer />
         :
-        <LoginRegisterForm /> 
+        <LoginRegisterForm
+          login={this.login}
+          register={this.register}
+        /> 
         // <TaqueriaContainer /> 
       }
       </div>
