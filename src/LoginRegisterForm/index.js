@@ -32,7 +32,7 @@ export default class LoginRegisterForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(`You are attempting to ${this.state.action.toLowerCase()} with these inputs`)
+    console.log(`LoginRegForm/index.js: You are attempting to ${this.state.action.toLowerCase()} with these inputs`)
     console.log(this.state)
   
 
