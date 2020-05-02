@@ -12,6 +12,14 @@ export default class NewTaqueriaForm extends Component {
       recommendations: ''
     }
   }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+
   render() {
     return(
       <Grid centered columns={2}>
@@ -38,7 +46,7 @@ export default class NewTaqueriaForm extends Component {
               onChange={this.handleChange}
             />
             <Form.Input
-              name="zipcode"
+              name="zip_code"
               type="text"
               fluid icon="map marker alternate"
               iconPosition="left"
