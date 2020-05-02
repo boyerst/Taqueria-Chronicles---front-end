@@ -19,6 +19,11 @@ export default class NewTaqueriaForm extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.createTaqueria(this.state)
+  }
+
 
   render() {
     return(

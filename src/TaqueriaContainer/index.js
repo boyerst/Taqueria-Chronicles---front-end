@@ -38,12 +38,19 @@ export default class TaqueriaContainer extends Component {
     }
   }
 
+
+  createTaqueria = (taqueriaToAdd) => {
+    console.log("This is the Taq that you are trying to create:")
+    console.log(taqueriaToAdd)
+  }
+
+
   render() {
     return(
       <React.Fragment>
       <h2>Taqueria Chronicles</h2>
         <TaqueriaList taquerias={this.state.taquerias}/>
-        <NewTaqueriaForm />
+        <NewTaqueriaForm createTaqueria={this.createTaqueria}/>
       </React.Fragment>
     )
   }
