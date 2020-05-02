@@ -39,10 +39,10 @@ export default class TaqueriaContainer extends Component {
 
   render() {
     return(
-      <h2>Taqueria Container</h2>
-      <div>
-        <TaqueriaList />
-      </div>
+      <React.Fragment>
+      <h2>TaqContainer</h2>
+        <TaqueriaList taquerias={this.state.taquerias}/>
+      </React.Fragment>
     )
   }
 }
