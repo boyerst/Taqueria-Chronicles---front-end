@@ -7,7 +7,7 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = { 
-      loggedIn: true, //change back to false
+      loggedIn: true, //BACK TO FALSE
       loggedInUserEmail: ''
     }
   }
@@ -58,6 +58,14 @@ export default class App extends Component {
       console.log("loginResponse", loginResponse);
       const loginJson = await loginResponse.json()
       console.log("loginJson", loginJson);
+      if(loginResponse.status === 200) {
+        this.setState({
+          loggedIn: true,
+          loggedInUserEmail: loginJson.data.email
+        })
+      }
+
+
     } catch(error) {
       console.error("Error in login route.")
       console.error(error)
