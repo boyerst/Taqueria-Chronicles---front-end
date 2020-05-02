@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TaqueriaList from '../TaqueriaList'
+import NewTaqueriaForm from '../NewTaqueriaForm'
 
 
 export default class TaqueriaContainer extends Component {
@@ -40,8 +41,9 @@ export default class TaqueriaContainer extends Component {
   render() {
     return(
       <React.Fragment>
-      <h2>TaqContainer</h2>
+      <h2>Taqueria Chronicles</h2>
         <TaqueriaList taquerias={this.state.taquerias}/>
+        <NewTaqueriaForm />
       </React.Fragment>
     )
   }

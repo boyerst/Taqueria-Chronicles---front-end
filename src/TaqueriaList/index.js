@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Rating } from 'semantic-ui-react'
+import { Card, Rating, Button } from 'semantic-ui-react'
 
 export default function TaqueriaList(props) {
   console.log("Here is props in TaqueriaList")
@@ -27,12 +27,29 @@ export default function TaqueriaList(props) {
             </span>
           </Card.Meta>
         </Card.Content>
+         <Button.Group>
+          <Button 
+            icon="delete"
+            color='red' 
+            size="mini"
+            onClick={ () => props.deleteDog(taquerias.id) }
+          >
+          </Button>
+          <Button.Or />
+          <Button 
+            icon="edit outline"
+            color='green' 
+            size="mini"
+            onClick={ () => props.editDog(taquerias.id) }
+          >
+          </Button>
+        </Button.Group>
       </Card>
 
     )
   })
   return (
-    <Card.Group>
+    <Card.Group centered={true}>
       {taquerias}
     </Card.Group>
   )
