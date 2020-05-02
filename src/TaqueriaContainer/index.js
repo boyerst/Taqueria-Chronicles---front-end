@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TaqueriaList from '../TaqueriaList'
 
 
 export default class TaqueriaContainer extends Component {
@@ -39,6 +40,9 @@ export default class TaqueriaContainer extends Component {
   render() {
     return(
       <h2>Taqueria Container</h2>
+      <div>
+        <TaqueriaList />
+      </div>
     )
   }
 }
