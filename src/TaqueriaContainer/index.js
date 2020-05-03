@@ -83,14 +83,20 @@ export default class TaqueriaContainer extends Component {
       this.setState({
         taquerias: this.state.taquerias.filter(taqueria => taqueria.id != idOfTaqueriaToDelete)
       })
-     
-
 
     } catch (error) {
       console.log("error - unable to delete taq")
       console.log(error)
     }
   }
+
+  editTaqueria = async (idOfTaqueriaToEdit) => {
+    console.log("Here is the taq you are trying to edit:", idOfTaqueriaToEdit)
+    this.setState({
+      idOfTaqueriaToEdit: idOfTaqueriaToEdit
+    })
+  }
+
 
   render() {
     return(
@@ -99,6 +105,7 @@ export default class TaqueriaContainer extends Component {
         <TaqueriaList 
         taquerias={this.state.taquerias}
         deleteTaqueria={this.deleteTaqueria}
+        editTaqueria={this.editTaqueria}
         />
         <NewTaqueriaForm createTaqueria={this.createTaqueria}/>
       </React.Fragment>
