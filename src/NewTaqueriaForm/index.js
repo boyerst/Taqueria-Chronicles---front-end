@@ -89,9 +89,7 @@ export default class NewTaqueriaForm extends Component {
             </Button>
           </Form>
         </Segment>
-        <Message>
-        
-        </Message>
+
       </Grid.Column>
     </Grid>
     );

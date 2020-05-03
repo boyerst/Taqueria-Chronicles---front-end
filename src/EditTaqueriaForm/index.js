@@ -23,14 +23,17 @@ export default class EditTaqueriaForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.updateTaqueria(this.state)
+
   }
 
 
   render() {
+    
+
     return (
-      <Modal>
+      <Modal open={true} basic size= "small"  onClose={this.props.closeModal}>
       <Header>
-        <h3>Enter new info</h3>
+        <h3>Enter Updated Information</h3>
         </Header>
         <Modal.Content>
         <Form onSubmit={this.handleSubmit}>

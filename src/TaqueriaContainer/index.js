@@ -99,11 +99,50 @@ export default class TaqueriaContainer extends Component {
     })
   }
 
-  closeModal = () => {
-    this.setState({
-      idOTaqueriaToEdit: -1
-    })
+
+   updateTaqueria = async (updatedTaqueriaInfo) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + this.state.idOfTaqueriaToEdit
+
+    try {
+      const updateTaqueriaResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'PUT',
+        body: JSON.stringify(updatedTaqueriaInfo), 
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      console.log("updateTaqueriaResponse", updateTaqueriaResponse)
+      const updateTaqueriaJson = await updateTaqueriaResponse.json()
+      console.log("updateTaqueriaJson", updateTaqueriaJson);
+      if(updateTaqueriaResponse.status == 200) {
+        const taquerias = this.state.taquerias
+        const indexOfTaqueriaBeingUpdated = taquerias.findIndex(taqueria => taqueria.id == this.state.idOfTaqueriaToEdit)
+        taquerias[indexOfTaqueriaBeingUpdated] = updateTaqueriaJson.data
+        this.setState({
+          taquerias: taquerias,
+          idOfTaqueriaToEdit: -1
+        })
+      }
+     
+
+    } catch(error) {
+      console.error("error - unable to update taq")
+      console.error(error)
+    }
+
+
   }
+
+
+
+
+  // closeModal = () => {
+  //   this.setState({
+  //     idOTaqueriaToEdit: -1,
+    
+  //   })
+  // }
 
   render() {
     return(
@@ -122,6 +161,7 @@ export default class TaqueriaContainer extends Component {
             key={this.state.idOfTaqueriaToEdit}
             taqueriaToEdit={this.state.taquerias.find((taqueria) => taqueria.id === this.state.idOfTaqueriaToEdit)}
             closeModal={this.closeModal}
+            updateTaqueria={this.updateTaqueria}
           /> 
         }
       
