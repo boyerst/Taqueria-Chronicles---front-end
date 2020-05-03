@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TaqueriaList from '../TaqueriaList'
 import NewTaqueriaForm from '../NewTaqueriaForm'
+import EditTaqueriaForm from '../EditTaqueriaForm'
 
 
 export default class TaqueriaContainer extends Component {
@@ -8,7 +9,8 @@ export default class TaqueriaContainer extends Component {
     super(props)
 
     this.state = {
-      taquerias: []
+      taquerias: [],
+      idOfTaqueriaToEdit: -1
     }
   }
 
@@ -97,17 +99,32 @@ export default class TaqueriaContainer extends Component {
     })
   }
 
+  closeModal = () => {
+    this.setState({
+      idOTaqueriaToEdit: -1
+    })
+  }
 
   render() {
     return(
       <React.Fragment>
       <h2>Taqueria Chronicles</h2>
+        <NewTaqueriaForm createTaqueria={this.createTaqueria}/>
         <TaqueriaList 
         taquerias={this.state.taquerias}
         deleteTaqueria={this.deleteTaqueria}
         editTaqueria={this.editTaqueria}
         />
-        <NewTaqueriaForm createTaqueria={this.createTaqueria}/>
+        { 
+          this.state.idOfTaqueriaToEdit !== -1 
+          && 
+          <EditTaqueriaForm 
+            key={this.state.idOfTaqueriaToEdit}
+            taqueriaToEdit={this.state.taquerias.find((taqueria) => taqueria.id === this.state.idOfTaqueriaToEdit)}
+            closeModal={this.closeModal}
+          /> 
+        }
+      
       </React.Fragment>
     )
   }
