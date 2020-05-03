@@ -39,10 +39,35 @@ export default class TaqueriaContainer extends Component {
   }
 
 
-  createTaqueria = (taqueriaToAdd) => {
+  createTaqueria = async (taqueriaToAdd) => {
     console.log("This is the Taq that you are trying to create:")
     console.log(taqueriaToAdd)
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/"
+
+      const createTaqueriaResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(taqueriaToAdd)
+      })
+      const createTaqueriaJson = await createTaqueriaResponse.json()
+      console.log("Here is the result of creating the taq:")
+      console.log(createTaqueriaJson)
+
+      if(createTaqueriaResponse.status === 201) {
+        const taquerias = this.state.taquerias
+        taquerias.push(createTaqueriaJson.data)
+        this.setState( {taquerias: taquerias} )
+        }
+    } catch (error){
+      console.log(error)
+      console.log("There was an error creating the taq")
+    }
   }
+  
 
 
   render() {

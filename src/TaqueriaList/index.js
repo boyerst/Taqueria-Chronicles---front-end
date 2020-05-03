@@ -27,23 +27,7 @@ export default function TaqueriaList(props) {
             </span>
           </Card.Meta>
         </Card.Content>
-         <Button.Group>
-          <Button 
-            icon="delete"
-            color='red' 
-            size="mini"
-            onClick={ () => props.deleteDog(taquerias.id) }
-          >
-          </Button>
-          <Button.Or />
-          <Button 
-            icon="edit outline"
-            color='green' 
-            size="mini"
-            onClick={ () => props.editDog(taquerias.id) }
-          >
-          </Button>
-        </Button.Group>
+    
       </Card>
 
     )
