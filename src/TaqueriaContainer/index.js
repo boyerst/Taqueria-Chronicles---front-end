@@ -69,12 +69,33 @@ export default class TaqueriaContainer extends Component {
   }
   
 
+  deleteTaqueria = async (idOfTaqueriaToDelete) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + idOfTaqueriaToDelete
+    try {
+    
+      const deleteTaqueriaResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'DELETE'
+      })
+      console.log("deleteTaqueriaResponse", deleteTaqueriaResponse)
+      const deleteTaqueriaJson = await deleteTaqueriaResponse.json()
+      console.log("deleteTaqueriaJson", deleteTaqueriaJson)
+     
+
+    } catch (error) {
+      console.log("error - unable to delete taq")
+      console.log(error)
+    }
+  }
 
   render() {
     return(
       <React.Fragment>
       <h2>Taqueria Chronicles</h2>
-        <TaqueriaList taquerias={this.state.taquerias}/>
+        <TaqueriaList 
+        taquerias={this.state.taquerias}
+        deleteTaqueria={this.deleteTaqueria}
+        />
         <NewTaqueriaForm createTaqueria={this.createTaqueria}/>
       </React.Fragment>
     )
