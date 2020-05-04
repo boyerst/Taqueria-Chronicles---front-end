@@ -79,8 +79,10 @@ export default class NewTaqueriaForm extends Component {
               onChange={this.handleChange}
             />
             <div>
-              <Rating icon="star" maxRating={5} onRate={this.handleRate} defaultRating={0} />
+              Rating: 
+              <Rating icon="empty star" maxRating={5} onRate={this.handleRate} defaultRating={0} />
             </div>
+            <br/>
             <Button type= "Submit" color="green" fluid size="large">
             Add Taqueria
             </Button>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button, Grid, Segment, Message, Modal, Header, Rating, Icon } from 'semantic-ui-react'
 import SkyLight from 'react-skylight'
+import '../index.css'
 
 export default class EditTaqueriaForm extends Component {
   constructor(props) {
@@ -26,8 +27,12 @@ export default class EditTaqueriaForm extends Component {
 
   }
 
-  handleRate = (event, { rating, maxRating }) =>
+  handleRate = (event, { rating, maxRating }) => {
+    event.preventDefault()
     this.setState({ rating, maxRating })
+
+  }
+
 
 
 
@@ -68,11 +73,10 @@ export default class EditTaqueriaForm extends Component {
               value={this.state.zip_code}
               onChange={this.handleChange}
             />
-            <Form>
-              <Rating icon="star" maxRating={5} onRate={this.handleRate} />
-            </Form>
-       
-              <Form.Input
+            <Form.Input class="rating">
+              <Rating name="rating" icon="star" maxRating={5} onRate={this.handleRate} defaultRating={this.state.rating} value={this.state.rating}/>
+            </Form.Input>
+            <Form.Input
               name="rating"
               type="text"
               fluid icon="star"
