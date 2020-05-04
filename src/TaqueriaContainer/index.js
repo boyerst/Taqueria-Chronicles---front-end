@@ -21,7 +21,7 @@ export default class TaqueriaContainer extends Component {
   getTaquerias = async () => {
     try {
       console.log(process.env)
-      const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias"
+      const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/"
       console.log("Will be fetching data from the following url:")
       console.log(url)
       const taqueriasResponse = await fetch(url, {
@@ -74,7 +74,7 @@ export default class TaqueriaContainer extends Component {
   
 
   deleteTaqueria = async (idOfTaqueriaToDelete) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias" + idOfTaqueriaToDelete
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + idOfTaqueriaToDelete
     try {
     
       const deleteTaqueriaResponse = await fetch(url, {
@@ -103,7 +103,7 @@ export default class TaqueriaContainer extends Component {
 
 
   updateTaqueria = async (updatedTaqueriaInfo) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias" + this.state.idOfTaqueriaToEdit
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + this.state.idOfTaqueriaToEdit
 
     try {
       const updateTaqueriaResponse = await fetch(url, {
