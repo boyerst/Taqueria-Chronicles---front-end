@@ -144,7 +144,7 @@ export default class TaqueriaContainer extends Component {
   render() {
     return(
       <React.Fragment>
-      <h2>Taqueria Chronicles</h2>
+      <h2>Taqueria Time</h2>
         <NewTaqueriaForm 
         createTaqueria={this.createTaqueria}
         
