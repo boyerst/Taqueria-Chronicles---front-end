@@ -46,7 +46,7 @@ export default class NewTaqueriaForm extends Component {
   return(
     <Modal 
     className="add-taqueria"
-    open={false} 
+    // open={false} 
     basic size= "large" 
     trigger={<Button onClick={this.handleOpen}>Add New Taqueria</Button>}
     open={this.state.modalOpen}
