@@ -63,8 +63,7 @@ export default class TaqueriaContainer extends Component {
         const taquerias = this.state.taquerias
         taquerias.push(createTaqueriaJson.data)
         this.setState({
-          taquerias: taquerias,
-          modalOpen: true
+          taquerias: taquerias
         })
         }
     } catch (error){
@@ -150,6 +149,7 @@ export default class TaqueriaContainer extends Component {
         createTaqueria={this.createTaqueria}
         
         />
+       
         <TaqueriaList 
         taquerias={this.state.taquerias}
         deleteTaqueria={this.deleteTaqueria}

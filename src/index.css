@@ -13,8 +13,7 @@
   background-color: white;
 }
 
-.grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.add-taqueria {
+  background-color: black;
+  color: black;
 }

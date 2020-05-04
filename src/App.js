@@ -4,6 +4,7 @@ import TaqueriaContainer from './TaqueriaContainer'
 import LoginRegisterForm from './LoginRegisterForm'
 import MenuComponent from './MenuComponent'
 
+
 export default class App extends Component {
   constructor() {
     super()
@@ -111,10 +112,12 @@ export default class App extends Component {
 
         </React.Fragment>
         :
+        
         <LoginRegisterForm
           login={this.login}
           register={this.register}
         /> 
+    
     
       }
       </div>

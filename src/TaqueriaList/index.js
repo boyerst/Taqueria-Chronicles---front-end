@@ -29,6 +29,7 @@ export default function TaqueriaList(props) {
             icon="delete"
             color='red' 
             size="mini"
+            inverted
             onClick={ () => props.deleteTaqueria(taquerias.id) }
           >
           </Button>
@@ -37,6 +38,7 @@ export default function TaqueriaList(props) {
             icon="edit outline"
             color='green' 
             size="mini"
+            inverted
             onClick={ () => props.editTaqueria(taquerias.id) }
           >
           </Button>

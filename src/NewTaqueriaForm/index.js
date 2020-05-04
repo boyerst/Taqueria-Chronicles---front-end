@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Grid, Segment, Message, Header, Rating, Modal, Menu } from 'semantic-ui-react'
+import { Form, Button, Grid, Icon, Segment, Message, Header, Rating, Modal, Menu } from 'semantic-ui-react'
 
 export default class NewTaqueriaForm extends Component {
   constructor(props) {
@@ -45,18 +45,19 @@ export default class NewTaqueriaForm extends Component {
   render() {
   return(
     <Modal 
+    className="add-taqueria"
     open={false} 
     basic size= "large" 
-    
     trigger={<Button onClick={this.handleOpen}>Add New Taqueria</Button>}
     open={this.state.modalOpen}
     onClose={this.handleClose}
+
     >
+
     <Header>
       <h3>Add New Taqueria</h3>
     </Header>
-   
-      <Modal.Content>
+    <Modal.Content>
       <Segment>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
@@ -101,8 +102,19 @@ export default class NewTaqueriaForm extends Component {
           </Form.Input>
           <br/>
           <Modal.Actions>
-          <Button type= "Submit" color="green" fluid size="large" onClick={this.handleClose}>
-          Add Taqueria
+          <Button 
+            type= "Submit" 
+            color="green" 
+            onClick={this.handleClose}>
+              <Icon name='thumbs up' />
+            Add Taqueria
+          </Button>
+          &nbsp;
+          <Button 
+            color='grey' 
+            onClick={this.handleClose}>
+              <Icon name='undo' /> 
+            Go Back
           </Button>
           </Modal.Actions>
         </Form>

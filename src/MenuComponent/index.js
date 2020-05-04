@@ -10,31 +10,32 @@ import ReactDOM from 'react-dom';
 
 
 export default class MenuComponent extends Component {
-  state =  { 
-    activeItem: 'logout'
+  constructor(props) {
+    super(props)
+    this.state =  { 
+      activeItem: 'logout'
+    }
   }
-
   handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
 
 
 
 
-render() {
+render(props) {
     const { activeItem } = this.state
 
     return (
       <Menu secondary>
+        <Menu.Item>
+        {this.props.email} 
+        </Menu.Item>
         <Menu.Item
           name='logout'
           active={activeItem === 'logout'}
           onClick={this.props.logout}
         />
-        <Menu.Item
-          name='addNewTaqueria'
-          active={activeItem === 'addNewTaqueria'}
-          // onClick={}
-        />
+      
       </Menu>
     )
   }
