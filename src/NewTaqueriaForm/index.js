@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Grid, Segment, Message } from 'semantic-ui-react'
+import { Form, Button, Grid, Segment, Message, Rating } from 'semantic-ui-react'
 
 export default class NewTaqueriaForm extends Component {
   constructor(props) {
@@ -30,6 +30,9 @@ export default class NewTaqueriaForm extends Component {
       recommendations: ''
     })
   }
+
+  handleRate = (event, { rating, maxRating }) =>
+    this.setState({ rating, maxRating })
 
 
   render() {
@@ -67,15 +70,6 @@ export default class NewTaqueriaForm extends Component {
               onChange={this.handleChange}
             />
               <Form.Input
-              name="rating"
-              type="text"
-              fluid icon="star"
-              iconPosition="left"
-              placeholder="Rating"
-              value={this.state.rating}
-              onChange={this.handleChange}
-            />
-              <Form.Input
               name="recommendations"
               type="text"
               fluid icon="food"
@@ -84,6 +78,9 @@ export default class NewTaqueriaForm extends Component {
               value={this.state.recommendations}
               onChange={this.handleChange}
             />
+            <div>
+              <Rating icon="star" maxRating={5} onRate={this.handleRate} defaultRating={0} />
+            </div>
             <Button type= "Submit" color="green" fluid size="large">
             Add Taqueria
             </Button>

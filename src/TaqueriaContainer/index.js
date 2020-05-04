@@ -36,7 +36,7 @@ export default class TaqueriaContainer extends Component {
         taquerias: taqueriasJson.data
       })
     } catch (error) {
-      console.log("error gettings Taqueria data", error)
+      console.log("error getting Taqueria data", error)
     }
   }
 
@@ -100,7 +100,7 @@ export default class TaqueriaContainer extends Component {
   }
 
 
-   updateTaqueria = async (updatedTaqueriaInfo) => {
+  updateTaqueria = async (updatedTaqueriaInfo) => {
     const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + this.state.idOfTaqueriaToEdit
 
     try {
@@ -137,12 +137,7 @@ export default class TaqueriaContainer extends Component {
 
 
 
-  // closeModal = () => {
-  //   this.setState({
-  //     idOTaqueriaToEdit: -1,
-    
-  //   })
-  // }
+
 
   render() {
     return(

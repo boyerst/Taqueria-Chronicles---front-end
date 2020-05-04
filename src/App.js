@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import TaqueriaContainer from './TaqueriaContainer'
 import LoginRegisterForm from './LoginRegisterForm'
+import MenuComponent from './MenuComponent'
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = { 
-      loggedIn: true, //BACK TO FALSE
+      loggedIn: true,  //CHANGE BACK TO FALSE
       loggedInUserEmail: ''
     }
   }
@@ -72,19 +73,49 @@ export default class App extends Component {
     }
   }
 
+
+   logout = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + "/api/v1/users/logout"
+
+      const logoutResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      console.log("logoutResponse", logoutResponse)
+      const logoutJson = await logoutResponse.json()
+      console.log("logoutJson", logoutJson)
+      if(logoutResponse.status === 200) {
+        this.setState({
+          loggedIn: false,
+          loggedInUserEmail: ''
+        })
+      }
+    } catch(error) {
+      console.error("There was an error logging out")
+      console.error(error)
+    }
+  }
+
+
+
+
   render() {
     return (
       <div className="App">
       {
         this.state.loggedIn
         ?
-        <TaqueriaContainer />
+        <React.Fragment>
+          <MenuComponent email={this.state.loggedInUserEmail} logout={this.logout}/>
+          <TaqueriaContainer />
+
+        </React.Fragment>
         :
         <LoginRegisterForm
           login={this.login}
           register={this.register}
         /> 
-        // <TaqueriaContainer /> 
+    
       }
       </div>
     )

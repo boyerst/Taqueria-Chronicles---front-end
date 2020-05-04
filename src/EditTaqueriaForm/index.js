@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Grid, Segment, Message, Modal, Header, Icon } from 'semantic-ui-react'
+import { Form, Button, Grid, Segment, Message, Modal, Header, Rating, Icon } from 'semantic-ui-react'
 import SkyLight from 'react-skylight'
 
 export default class EditTaqueriaForm extends Component {
@@ -26,10 +26,14 @@ export default class EditTaqueriaForm extends Component {
 
   }
 
+  handleRate = (event, { rating, maxRating }) =>
+    this.setState({ rating, maxRating })
+
+
+
 
   render() {
     
-
     return (
       <Modal open={true} basic size= "small"  onClose={this.props.closeModal}>
       <Header>
@@ -64,6 +68,10 @@ export default class EditTaqueriaForm extends Component {
               value={this.state.zip_code}
               onChange={this.handleChange}
             />
+            <Form>
+              <Rating icon="star" maxRating={5} onRate={this.handleRate} />
+            </Form>
+       
               <Form.Input
               name="rating"
               type="text"
