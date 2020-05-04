@@ -46,7 +46,8 @@ export default class LoginRegisterForm extends Component {
 
   render() {
     return (
-    <Grid centered columns={2}>
+
+    <Grid centered columns={2} >
       <Grid.Column>
         
         <Segment>

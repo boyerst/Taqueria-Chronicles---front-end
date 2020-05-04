@@ -62,7 +62,10 @@ export default class TaqueriaContainer extends Component {
       if(createTaqueriaResponse.status === 201) {
         const taquerias = this.state.taquerias
         taquerias.push(createTaqueriaJson.data)
-        this.setState( {taquerias: taquerias} )
+        this.setState({
+          taquerias: taquerias,
+          modalOpen: true
+        })
         }
     } catch (error){
       console.log(error)
@@ -143,7 +146,10 @@ export default class TaqueriaContainer extends Component {
     return(
       <React.Fragment>
       <h2>Taqueria Chronicles</h2>
-        <NewTaqueriaForm createTaqueria={this.createTaqueria}/>
+        <NewTaqueriaForm 
+        createTaqueria={this.createTaqueria}
+        
+        />
         <TaqueriaList 
         taquerias={this.state.taquerias}
         deleteTaqueria={this.deleteTaqueria}

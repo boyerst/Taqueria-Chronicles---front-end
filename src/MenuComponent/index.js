@@ -4,10 +4,17 @@ import ReactDOM from 'react-dom';
 
 
 
-export default class MenuComponent extends Component {
-  state = { activeItem: 'logout' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+
+
+
+export default class MenuComponent extends Component {
+  state =  { 
+    activeItem: 'logout'
+  }
+
+  handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
 
 
@@ -26,7 +33,7 @@ render() {
         <Menu.Item
           name='addNewTaqueria'
           active={activeItem === 'addNewTaqueria'}
-          onClick={this.props.logout}
+          // onClick={}
         />
       </Menu>
     )

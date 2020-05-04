@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Grid, Segment, Message, Rating } from 'semantic-ui-react'
+import { Form, Button, Grid, Segment, Message, Header, Rating, Modal, Menu } from 'semantic-ui-react'
 
 export default class NewTaqueriaForm extends Component {
   constructor(props) {
@@ -9,7 +9,9 @@ export default class NewTaqueriaForm extends Component {
       address: '',                            
       zip_code: '',
       rating: '',
-      recommendations: ''
+      recommendations: '',
+      modalOpen: false
+
     }
   }
 
@@ -27,73 +29,95 @@ export default class NewTaqueriaForm extends Component {
       address: '',
       zip_code: '',
       rating: '',
-      recommendations: ''
+      recommendations: '',
+      modalOpen: false
     })
   }
 
   handleRate = (event, { rating, maxRating }) =>
     this.setState({ rating, maxRating })
 
+ 
+  handleOpen = () => this.setState({ modalOpen: true })
+
+
 
   render() {
-    return(
-      <Grid centered columns={2}>
-      <Grid.Column>
-        
-        <Segment>
-          <Form onSubmit={this.handleSubmit}>
+  return(
+    <Modal 
+    open={false} 
+    basic size= "large" 
+    
+    trigger={<Button onClick={this.handleOpen}>Add New Taqueria</Button>}
+    open={this.state.modalOpen}
+    onClose={this.handleClose}
+    >
+    <Header>
+      <h3>Add New Taqueria</h3>
+    </Header>
+   
+      <Modal.Content>
+      <Segment>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Input
+            name="name"
+            type="text"
+            fluid icon="user"
+            iconPosition="left"
+            placeholder="Name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+          <Form.Input
+            name="address"
+            type="text"
+            fluid icon="address book"
+            iconPosition="left"
+            placeholder="Address"
+            value={this.state.address}
+            onChange={this.handleChange}
+          />
+          <Form.Input
+            name="zip_code"
+            type="text"
+            fluid icon="map marker alternate"
+            iconPosition="left"
+            placeholder="Zip Code"
+            value={this.state.zip_code}
+            onChange={this.handleChange}
+          />
             <Form.Input
-              name="name"
-              type="text"
-              fluid icon="user"
-              iconPosition="left"
-              placeholder="Name"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            <Form.Input
-              name="address"
-              type="text"
-              fluid icon="address book"
-              iconPosition="left"
-              placeholder="Address"
-              value={this.state.address}
-              onChange={this.handleChange}
-            />
-            <Form.Input
-              name="zip_code"
-              type="text"
-              fluid icon="map marker alternate"
-              iconPosition="left"
-              placeholder="Zip Code"
-              value={this.state.zip_code}
-              onChange={this.handleChange}
-            />
-              <Form.Input
-              name="recommendations"
-              type="text"
-              fluid icon="food"
-              iconPosition="left"
-              placeholder="Recommendations"
-              value={this.state.recommendations}
-              onChange={this.handleChange}
-            />
-            <div>
-              Rating: 
-              <Rating icon="empty star" maxRating={5} onRate={this.handleRate} defaultRating={0} />
-            </div>
-            <br/>
-            <Button type= "Submit" color="green" fluid size="large">
-            Add Taqueria
-            </Button>
-          </Form>
-        </Segment>
+            name="recommendations"
+            type="text"
+            fluid icon="food"
+            iconPosition="left"
+            placeholder="Recommendations"
+            value={this.state.recommendations}
+            onChange={this.handleChange}
+          />
+          <Form.Input>
+            Rating: 
+            <Rating icon="star" maxRating={5} onRate={this.handleRate} defaultRating={0} />
+          </Form.Input>
+          <br/>
+          <Modal.Actions>
+          <Button type= "Submit" color="green" fluid size="large" onClick={this.handleClose}>
+          Add Taqueria
+          </Button>
+          </Modal.Actions>
+        </Form>
+      </Segment>
 
-      </Grid.Column>
-    </Grid>
+    
+    </Modal.Content>
+    </Modal>
     );
   }
 }
+
+
+
+
 
     
   

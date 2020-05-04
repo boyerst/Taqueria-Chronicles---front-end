@@ -27,13 +27,20 @@ export default class EditTaqueriaForm extends Component {
 
   }
 
+
   handleRate = (event, { rating, maxRating }) => {
-    event.preventDefault()
+    // event.preventDefault()
     this.setState({ rating, maxRating })
+
 
   }
 
+  // handleRate = (event, { rating, maxRating }) => {
+  //   event.preventDefault()
+  //   this.props.updateTaqueria(this.state)
 
+
+  // }
 
 
 
@@ -45,6 +52,7 @@ export default class EditTaqueriaForm extends Component {
         <h3>Enter Updated Information</h3>
         </Header>
         <Modal.Content>
+        <Segment>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
               name="name"
@@ -73,8 +81,16 @@ export default class EditTaqueriaForm extends Component {
               value={this.state.zip_code}
               onChange={this.handleChange}
             />
-            <Form.Input class="rating">
-              <Rating name="rating" icon="star" maxRating={5} onRate={this.handleRate} defaultRating={this.state.rating} value={this.state.rating}/>
+            <Form.Input className="rating">
+              <Rating 
+              name="rating" 
+              icon="star" 
+              maxRating={5} 
+              onRate={this.handleRate} 
+              onChange={this.handleChange} 
+              defaultRating={this.state.rating} 
+              value={this.state.rating} 
+              />
             </Form.Input>
             <Form.Input
               name="rating"
@@ -98,6 +114,7 @@ export default class EditTaqueriaForm extends Component {
             <Button type="Submit">Update Taqueria</Button>
           </Modal.Actions>
         </Form>
+        </Segment>
         </Modal.Content>
       </Modal>
     )
