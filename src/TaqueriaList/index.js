@@ -10,7 +10,7 @@ export default function TaqueriaList(props) {
       <Card key={taquerias.id}>
         <Card.Content>
           <Card.Header>{taquerias.name}</Card.Header>
-          <Rating icon="star" maxRating="5" defaultRating={taquerias.rating} disabled/>
+          <Rating icon="star" maxRating="5" rating={taquerias.rating} disabled/>
           <Card.Description>
             What to eat: {taquerias.recommendations}
           </Card.Description>
