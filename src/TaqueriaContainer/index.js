@@ -27,9 +27,10 @@ export default class TaqueriaContainer extends Component {
       const taqueriasResponse = await fetch(url, {
         credentials: 'include'
       })
+      console.log(taqueriasResponse, "after fetch json")
       console.log("Here is the response from the fetch call:")
-      console.log(taqueriasResponse)
       const taqueriasJson = await taqueriasResponse.json()
+      console.log(taqueriasResponse, "this is after await")
       console.log("Here is the data that was fetched via getTaq in taqCont:")
       console.log(taqueriasJson)
       this.setState({
