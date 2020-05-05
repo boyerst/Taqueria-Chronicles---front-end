@@ -20,11 +20,12 @@ export default class App extends Component {
     try {
       const registerResponse = await fetch(url, {
         credentials: 'include', 
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
         method: 'POST',
         body: JSON.stringify(registrationData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
       })
       console.log("registerResponse", registerResponse)
       const registerJson = await registerResponse.json()
@@ -51,12 +52,12 @@ export default class App extends Component {
     try {
       const loginResponse = await fetch(url, {
         credentials: 'include',
-        method: 'POST',
-        body: JSON.stringify(loginData),
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
+        method: 'POST',
+        body: JSON.stringify(loginData),
       })
       console.log("loginResponse", loginResponse);
       const loginJson = await loginResponse.json()
