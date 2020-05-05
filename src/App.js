@@ -71,10 +71,7 @@ export default class App extends Component {
     } catch(error) {
       console.error("Error in login route")
       console.error(error)
-      console.log(error)
-      console.log(loginResponse)
-      console.log(loginJson)
-      console.log(loginData)
+
     }
   }
 
