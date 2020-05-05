@@ -47,7 +47,7 @@ export default class App extends Component {
   login = async (loginData) => {
     console.log("TaqCont/App.js Here is the lifted login data:", loginData);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
-    console.log("loginJson", loginJson before fetch);
+    console.log(loginJson, "loginJson before fetch");
     try {
       const loginResponse = await fetch(url, {
         credentials: 'include',
@@ -60,7 +60,7 @@ export default class App extends Component {
       })
       console.log("loginResponse", loginResponse);
       const loginJson = await loginResponse.json()
-      console.log("loginJson", loginJson after fetch);
+      console.log(loginJson, "loginJson after fetch");
 
       if(loginResponse.status === 200) {
         this.setState({
