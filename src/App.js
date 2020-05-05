@@ -16,7 +16,7 @@ export default class App extends Component {
 
   register = async (registrationData) => {
     console.log("Here is the lifted registration data:", registrationData)
-    const url = process.env.REACT_APP_API_URL + "/api/v1/users/register"
+    const url = process.env.REACT_APP_API_URL + "/api/v1/users/register/"
     try {
       const registerResponse = await fetch(url, {
         credentials: 'include', 
@@ -46,7 +46,7 @@ export default class App extends Component {
 
   login = async (loginData) => {
     console.log("TaqCont/App.js: Here is the lifted login data:", loginData)
-    const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
+    const url = process.env.REACT_APP_API_URL + '/api/v1/users/login/'
 
     try {
       const loginResponse = await fetch(url, {
@@ -77,7 +77,7 @@ export default class App extends Component {
 
    logout = async () => {
     try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/users/logout"
+      const url = process.env.REACT_APP_API_URL + "/api/v1/users/logout/"
 
       const logoutResponse = await fetch(url, {
         credentials: 'include'
