@@ -9,7 +9,7 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = { 
-      loggedIn: false,  //CHANGE BACK TO FALSE
+      loggedIn: true,  //CHANGE BACK TO FALSE
       loggedInUserEmail: ''
     }
   }
