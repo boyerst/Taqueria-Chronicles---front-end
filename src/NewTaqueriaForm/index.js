@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Grid, Icon, Segment, Message, Header, Rating, Modal, Menu } from 'semantic-ui-react'
+import { Form, Button, Icon, Segment, Header, Rating, Modal } from 'semantic-ui-react'
 
 export default class NewTaqueriaForm extends Component {
   constructor(props) {
