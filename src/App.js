@@ -15,7 +15,7 @@ export default class App extends Component {
   }
 
   register = async (registrationData) => {
-    console.log("Here is the lifted registration data:", registrationData)
+    console.log("Here is the lifted registration data:", registrationData);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/register'
     try {
       const registerResponse = await fetch(url, {
@@ -45,7 +45,7 @@ export default class App extends Component {
   }
 
   login = async (loginData) => {
-    console.log("TaqCont/App.js: Here is the lifted login data:", loginData)
+    console.log("TaqCont/App.js: Here is the lifted login data:", loginData);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
 
     try {
@@ -54,7 +54,8 @@ export default class App extends Component {
         method: 'POST',
         body: JSON.stringify(loginData),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         }
       })
       console.log("loginResponse", loginResponse);
@@ -80,7 +81,8 @@ export default class App extends Component {
       const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
 
       const logoutResponse = await fetch(url, {
-        credentials: 'include'
+        credentials: 'include',
+        'Accept': 'application/json'
       })
       console.log("logoutResponse", logoutResponse)
       const logoutJson = await logoutResponse.json()

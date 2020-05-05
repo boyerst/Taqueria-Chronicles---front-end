@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Form, Button, Grid, Segment, Message, Modal, Header, Rating, Icon } from 'semantic-ui-react'
-import SkyLight from 'react-skylight'
 import '../index.css'
 
 export default class EditTaqueriaForm extends Component {
