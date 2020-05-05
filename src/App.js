@@ -23,7 +23,7 @@ export default class App extends Component {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
+        },
         method: 'POST',
         body: JSON.stringify(registrationData),
       })
@@ -55,7 +55,7 @@ export default class App extends Component {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
+        },
         method: 'POST',
         body: JSON.stringify(loginData),
       })
