@@ -75,7 +75,7 @@ export default class TaqueriaContainer extends Component {
   
 
   deleteTaqueria = async (idOfTaqueriaToDelete) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + idOfTaqueriaToDelete
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/*" + idOfTaqueriaToDelete
     try {
     
       const deleteTaqueriaResponse = await fetch(url, {
