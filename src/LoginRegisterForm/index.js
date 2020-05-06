@@ -46,9 +46,7 @@ export default class LoginRegisterForm extends Component {
 
   render() {
     return (
-
     <Grid className="login" justify={"center"} columns={2} padded>
-    
       <Grid.Column>
         <Segment>
           <Form onSubmit={this.handleSubmit}>

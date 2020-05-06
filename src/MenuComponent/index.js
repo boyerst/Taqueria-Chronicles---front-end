@@ -4,11 +4,6 @@ import { Menu } from 'semantic-ui-react'
 
 
 
-
-
-
-
-
 export default class MenuComponent extends Component {
   constructor(props) {
     super(props)
@@ -16,15 +11,13 @@ export default class MenuComponent extends Component {
       activeItem: 'logout'
     }
   }
-  handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
-
+handleItemClick = (event, { name }) => this.setState({ activeItem: name })
 
 
 
 render(props) {
     const { activeItem } = this.state
-
     return (
       <Menu secondary>
         <Menu.Item>
@@ -35,7 +28,6 @@ render(props) {
           active={activeItem === 'logout'}
           onClick={this.props.logout}
         />
-      
       </Menu>
     )
   }

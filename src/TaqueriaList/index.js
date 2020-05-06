@@ -4,7 +4,7 @@ import { Card, Rating, Button } from 'semantic-ui-react'
 export default function TaqueriaList(props) {
   console.log("Here is props in TaqueriaList")
   console.log(props)
-  // const formattedDate = Moment(taquerias.created_at).format("LL")
+ 
   const taquerias = props.taquerias.map(taquerias => {
     return(
       <Card key={taquerias.id}>
@@ -44,7 +44,6 @@ export default function TaqueriaList(props) {
           </Button>
         </Button.Group>
       </Card>
-
     )
   })
   return (

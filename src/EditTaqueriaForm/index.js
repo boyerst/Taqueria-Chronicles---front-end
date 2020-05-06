@@ -28,17 +28,11 @@ export default class EditTaqueriaForm extends Component {
 
 
   handleRate = (event, { rating, maxRating }) => {
-    
     this.setState({ rating, maxRating })
-
-
   }
 
 
-
-
   render() {
-    
     return (
       <Modal open={true} basic size= "small"  onClose={this.props.closeModal}>
       <Header>

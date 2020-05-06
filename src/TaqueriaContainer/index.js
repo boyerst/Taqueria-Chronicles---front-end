@@ -20,19 +20,19 @@ export default class TaqueriaContainer extends Component {
 
   getTaquerias = async () => {
     try {
-      // console.log(process.env)
+      console.log(process.env)
       const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/"
-      // console.log("Will be fetching data from the following url:")
-      // console.log(url)
+      console.log("Will be fetching data from the following url:")
+      console.log(url)
       const taqueriasResponse = await fetch(url, {
         credentials: 'include',
       })
-      // console.log(taqueriasResponse, "after fetch json")
-      // console.log("Here is the response from the fetch call:")
+      console.log(taqueriasResponse, "after fetch json")
+      console.log("Here is the response from the fetch call:")
       const taqueriasJson = await taqueriasResponse.json()
-      // console.log(taqueriasResponse, "this is after await")
-      // console.log("Here is the data that was fetched via getTaq in taqCont:")
-      // console.log(taqueriasJson)
+      console.log(taqueriasResponse, "this is after await")
+      console.log("Here is the data that was fetched via getTaq in taqCont:")
+      console.log(taqueriasJson)
       this.setState({
         taquerias: taqueriasJson.data
       })
@@ -43,8 +43,8 @@ export default class TaqueriaContainer extends Component {
 
 
   createTaqueria = async (taqueriaToAdd) => {
-    // console.log("This is the Taq that you are trying to create:")
-    // console.log(taqueriaToAdd)
+    console.log("This is the Taq that you are trying to create:")
+    console.log(taqueriaToAdd)
     try {
       const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/"
 
@@ -57,8 +57,8 @@ export default class TaqueriaContainer extends Component {
         body: JSON.stringify(taqueriaToAdd)
       })
       const createTaqueriaJson = await createTaqueriaResponse.json()
-      // console.log("Here is the result of creating the taq:")
-      // console.log(createTaqueriaJson)
+      console.log("Here is the result of creating the taq:")
+      console.log(createTaqueriaJson)
 
       if(createTaqueriaResponse.status === 201) {
         const taquerias = this.state.taquerias
@@ -75,14 +75,14 @@ export default class TaqueriaContainer extends Component {
   
 
   deleteTaqueria = async (idOfTaqueriaToDelete) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/*" + idOfTaqueriaToDelete
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + idOfTaqueriaToDelete
     try {
     
       const deleteTaqueriaResponse = await fetch(url, {
         credentials: 'include',
         method: 'DELETE'
       })
-      // console.log("deleteTaqueriaResponse", deleteTaqueriaResponse)
+      console.log("deleteTaqueriaResponse", deleteTaqueriaResponse)
       const deleteTaqueriaJson = await deleteTaqueriaResponse.json()
       // console.log("deleteTaqueriaJson", deleteTaqueriaJson)
       this.setState({
@@ -115,9 +115,9 @@ export default class TaqueriaContainer extends Component {
           'Content-Type': 'application/json'
         }
       })
-      // console.log("updateTaqueriaResponse", updateTaqueriaResponse)
+      console.log("updateTaqueriaResponse", updateTaqueriaResponse)
       const updateTaqueriaJson = await updateTaqueriaResponse.json()
-      // console.log("updateTaqueriaJson", updateTaqueriaJson);
+      console.log("updateTaqueriaJson", updateTaqueriaJson);
       if(updateTaqueriaResponse.status == 200) {
         const taquerias = this.state.taquerias
         const indexOfTaqueriaBeingUpdated = taquerias.findIndex(taqueria => taqueria.id == this.state.idOfTaqueriaToEdit)
@@ -146,7 +146,6 @@ export default class TaqueriaContainer extends Component {
     return(
       <React.Fragment>
       <h2 className="h2">Taqueria Time</h2>
-
         <NewTaqueriaForm 
         createTaqueria={this.createTaqueria}
         />

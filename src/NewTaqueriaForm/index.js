@@ -51,10 +51,7 @@ export default class NewTaqueriaForm extends Component {
     trigger={<Button onClick={this.handleOpen}>Add New Taqueria</Button>}
     open={this.state.modalOpen}
     onClose={this.handleClose}
-
     >
-    
-    
     <Header>
       <h3>Add New Taqueria</h3>
     </Header>
@@ -99,7 +96,12 @@ export default class NewTaqueriaForm extends Component {
           />
           <Form.Input>
             Rating: 
-            <Rating icon="star" maxRating={5} onRate={this.handleRate} defaultRating={0} />
+            <Rating 
+              icon="star" 
+              maxRating={5} 
+              onRate={this.handleRate} 
+              defaultRating={0} 
+            />
           </Form.Input>
           <br/>
           <Modal.Actions>
@@ -120,8 +122,6 @@ export default class NewTaqueriaForm extends Component {
           </Modal.Actions>
         </Form>
       </Segment>
-
-    
     </Modal.Content>
     </Modal>
     );
