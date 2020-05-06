@@ -20,11 +20,11 @@ export default class App extends Component {
     try {
       const registerResponse = await fetch(url, {
         credentials: 'include', 
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        method: 'POST',
         body: JSON.stringify(registrationData),
       })
       console.log("registerResponse", registerResponse)
@@ -52,11 +52,11 @@ export default class App extends Component {
     try {
       const loginResponse = await fetch(url, {
         credentials: 'include',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        method: 'POST',
         body: JSON.stringify(loginData),
       })
       console.log("loginResponse", loginResponse);
