@@ -21,8 +21,8 @@ export default class App extends Component {
       const registerResponse = await fetch(url, {
         credentials: 'include', 
         headers: {
-          'Content-Type': 'application/json'
-          // 'Accept': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         method: 'POST',
         body: JSON.stringify(registrationData),
@@ -53,8 +53,8 @@ export default class App extends Component {
       const loginResponse = await fetch(url, {
         credentials: 'include',
         headers: {
-          'Content-Type': 'application/json'
-          // 'Accept': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         method: 'POST',
         body: JSON.stringify(loginData),
