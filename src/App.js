@@ -114,10 +114,8 @@ export default class App extends Component {
         <React.Fragment>
           <MenuComponent email={this.state.loggedInUserEmail} logout={this.logout}/>
           <TaqueriaContainer />
-
         </React.Fragment>
         :
-        
         <LoginRegisterForm
           login={this.login}
           register={this.register}

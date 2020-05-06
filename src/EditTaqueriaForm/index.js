@@ -34,12 +34,6 @@ export default class EditTaqueriaForm extends Component {
 
   }
 
-  // handleRate = (event, { rating, maxRating }) => {
-  //   event.preventDefault()
-  //   this.props.updateTaqueria(this.state)
-
-
-  // }
 
 
 
@@ -120,17 +114,3 @@ export default class EditTaqueriaForm extends Component {
 
   }
 }
-//   render() {
-//     return(
-//       <div>
-//         <section>
-//           <h1>React SkyLight</h1>
-//           <button onClick={() => this.simpleDialog.show()}>Open Modal</button>
-//         </section>
-//         <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title="Hi, I'm a simple modal">
-//           Hello, I dont have any callback.
-//         </SkyLight>
-//       </div>
-//     )
-//   }
-// }

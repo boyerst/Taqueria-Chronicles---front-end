@@ -93,7 +93,7 @@ export default class LoginRegisterForm extends Component {
           ?
           <Message>
           Need an account? <span className="link" onClick={this.changeForm}>Register</span>
-          </Message> //change <a>s to span with class if have issues in future
+          </Message> 
           :
           <Message>
           Already registered? <span className="link" onClick={this.changeForm}>Log In</span>
