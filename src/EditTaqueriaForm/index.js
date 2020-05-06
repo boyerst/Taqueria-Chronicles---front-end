@@ -28,7 +28,7 @@ export default class EditTaqueriaForm extends Component {
 
 
   handleRate = (event, { rating, maxRating }) => {
-    // event.preventDefault()
+    
     this.setState({ rating, maxRating })
 
 

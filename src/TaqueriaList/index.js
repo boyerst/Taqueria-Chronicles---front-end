@@ -24,7 +24,7 @@ export default function TaqueriaList(props) {
             </span>
           </Card.Meta>
         </Card.Content>
-         <Button.Group>
+        <Button.Group>
           <Button 
             icon="delete"
             color='red' 

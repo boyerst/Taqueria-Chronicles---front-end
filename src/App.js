@@ -15,7 +15,7 @@ export default class App extends Component {
   }
 
   register = async (registrationData) => {
-    console.log("Here is the lifted registration data:", registrationData);
+    // console.log("Here is the lifted registration data:", registrationData);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/register'
     try {
       const registerResponse = await fetch(url, {
@@ -27,9 +27,9 @@ export default class App extends Component {
         },
         body: JSON.stringify(registrationData),
       })
-      console.log("registerResponse", registerResponse)
+      // console.log("registerResponse", registerResponse)
       const registerJson = await registerResponse.json()
-      console.log("registerJson", registerJson)
+      // console.log("registerJson", registerJson)
 
       if(registerResponse.status === 201) {
         this.setState({
@@ -46,7 +46,7 @@ export default class App extends Component {
   }
 
   login = async (loginData) => {
-    console.log("TaqCont/App.js Here is the lifted login data:", loginData);
+    // console.log("TaqCont/App.js Here is the lifted login data:", loginData);
     const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
 
     try {
@@ -59,9 +59,9 @@ export default class App extends Component {
         },
         body: JSON.stringify(loginData),
       })
-      console.log("loginResponse", loginResponse);
+      // console.log("loginResponse", loginResponse);
       const loginJson = await loginResponse.json()
-      console.log(loginJson);
+      // console.log(loginJson);
       // console.log("login json after fetch")
 
       if(loginResponse.status === 200) {
@@ -86,9 +86,9 @@ export default class App extends Component {
         credentials: 'include',
         'Accept': 'application/json'
       })
-      console.log("logoutResponse", logoutResponse)
+      // console.log("logoutResponse", logoutResponse)
       const logoutJson = await logoutResponse.json()
-      console.log("logoutJson", logoutJson)
+      // console.log("logoutJson", logoutJson)
       if(logoutResponse.status === 200) {
         this.setState({
           loggedIn: false,
