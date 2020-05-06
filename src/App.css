@@ -1,3 +1,18 @@
 .App {
   text-align: center;
 }
+
+body {
+  background-color: gold;
+}
+
+.h3 {
+  color: white;
+
+}
+
+.login {
+  justify-content: center;
+
+}
+

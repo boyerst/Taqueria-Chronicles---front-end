@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TaqueriaList from '../TaqueriaList'
 import NewTaqueriaForm from '../NewTaqueriaForm'
 import EditTaqueriaForm from '../EditTaqueriaForm'
-
+import { Divider } from 'semantic-ui-react'
 
 export default class TaqueriaContainer extends Component {
   constructor(props) {
@@ -145,12 +145,12 @@ export default class TaqueriaContainer extends Component {
   render() {
     return(
       <React.Fragment>
-      <h2>Taqueria Time</h2>
+      <h2 className="h2">Taqueria Time</h2>
+
         <NewTaqueriaForm 
         createTaqueria={this.createTaqueria}
-        
         />
-       
+        <Divider />
         <TaqueriaList 
         taquerias={this.state.taquerias}
         deleteTaqueria={this.deleteTaqueria}
