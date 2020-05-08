@@ -27,9 +27,10 @@ export default class App extends Component {
         },
         body: JSON.stringify(registrationData),
       })
-      console.log("registerResponse", registerResponse)
+      
+      // console.log("registerResponse", registerResponse)
       const registerJson = await registerResponse.json()
-      console.log("registerJson", registerJson)
+      // console.log("registerJson", registerJson)
 
       if(registerResponse.status === 201) {
         this.setState({

@@ -1,5 +1,6 @@
 {
-  "name": "Taqueria-Chronicles---front-end",
+  "homepage": "/api/v1/taquerias",
+  "name": "react-taquerias",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
