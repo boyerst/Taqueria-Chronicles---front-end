@@ -85,7 +85,7 @@ export default class App extends Component {
 
       const logoutResponse = await fetch(url, {
         credentials: 'include',
-        'Accept': 'application/json'
+        // 'Accept': 'application/json'
       })
       console.log("logoutResponse", logoutResponse)
       const logoutJson = await logoutResponse.json()
