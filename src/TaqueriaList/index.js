@@ -5,22 +5,22 @@ export default function TaqueriaList(props) {
   console.log("Here is props in TaqueriaList")
   console.log(props)
  
-  const taquerias = props.taquerias.map(taquerias => {
+  const taquerias = props.taquerias.map(taqueria => {
     return(
-      <Card key={taquerias.id}>
+      <Card key={taqueria.id}>
         <Card.Content>
-          <Card.Header>{taquerias.name}</Card.Header>
-          <Rating icon="star" maxRating="5" rating={taquerias.rating} disabled/>
+          <Card.Header>{taqueria.name}</Card.Header>
+          <Rating icon="star" maxRating="5" rating={taqueria.rating} disabled/>
           <Card.Description>
-            What to eat: {taquerias.recommendations}
+            What to eat: {taqueria.recommendations}
           </Card.Description>
           <Card.Meta textAlign={"left"}>
-            {taquerias.address}
+            {taqueria.address}
           </Card.Meta>
           <Card.Meta textAlign={"left"}>
             <span 
             className='date'>
-            Posted on {taquerias.created_at} by {taquerias.patron_id.username}
+            Posted on {taqueria.created_at} by {taqueria.patron_id.username}
             </span>
           </Card.Meta>
         </Card.Content>
@@ -30,7 +30,7 @@ export default function TaqueriaList(props) {
             color='red' 
             size="mini"
             inverted
-            onClick={ () => props.deleteTaqueria(taquerias.id) }
+            onClick={ () => props.deleteTaqueria(taqueria.id) }
           >
           </Button>
           <Button.Or />
@@ -39,7 +39,7 @@ export default function TaqueriaList(props) {
             color='green' 
             size="mini"
             inverted
-            onClick={ () => props.editTaqueria(taquerias.id) }
+            onClick={ () => props.editTaqueria(taqueria.id) }
           >
           </Button>
         </Button.Group>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import { Form, Button, Grid, Segment, Message } from 'semantic-ui-react'
-
 
 export default class LoginRegisterForm extends Component {
 
@@ -34,8 +32,6 @@ export default class LoginRegisterForm extends Component {
     event.preventDefault()
     console.log(`LoginRegForm/index.js: You are attempting to ${this.state.action.toLowerCase()} with these inputs`)
     console.log(this.state)
-  
-
     if(this.state.action === "Register") {
       this.props.register(this.state)
     } else {

@@ -20,15 +20,20 @@ export default class TaqueriaContainer extends Component {
 
   getTaquerias = async () => {
     try {
-      console.log(process.env)
+      // console.log(process.env)
       const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/"
       console.log("Will be fetching data from the following url:")
       console.log(url)
       const taqueriasResponse = await fetch(url, {
         credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization' : 'curl --anyauth'
+        },
       })
-      console.log(taqueriasResponse, "after fetch json")
-      console.log("Here is the response from the fetch call:")
+      // console.log(taqueriasResponse, "after fetch json")
+      // console.log("Here is the response from the fetch call:")
       const taqueriasJson = await taqueriasResponse.json()
       console.log(taqueriasResponse, "this is after await")
       console.log("Here is the data that was fetched via getTaq in taqCont:")
@@ -41,6 +46,25 @@ export default class TaqueriaContainer extends Component {
     }
   }
 
+  deleteTaqueria = async (idOfTaqueriaToDelete) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + idOfTaqueriaToDelete
+    try {
+      const deleteTaqueriaResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'DELETE'
+      })
+      console.log("deleteTaqueriaResponse", deleteTaqueriaResponse)
+      const deleteTaqueriaJson = await deleteTaqueriaResponse.json()
+      // console.log("deleteTaqueriaJson", deleteTaqueriaJson)
+      this.setState({
+        taquerias: this.state.taquerias.filter(taqueria => taqueria.id != idOfTaqueriaToDelete)
+      })
+
+    } catch (error) {
+      console.log("error - unable to delete taq")
+      console.log(error)
+    }
+  }
 
   createTaqueria = async (taqueriaToAdd) => {
     console.log("This is the Taq that you are trying to create:")
@@ -74,26 +98,6 @@ export default class TaqueriaContainer extends Component {
   }
   
 
-  deleteTaqueria = async (idOfTaqueriaToDelete) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/" + idOfTaqueriaToDelete
-    try {
-    
-      const deleteTaqueriaResponse = await fetch(url, {
-        credentials: 'include',
-        method: 'DELETE'
-      })
-      console.log("deleteTaqueriaResponse", deleteTaqueriaResponse)
-      const deleteTaqueriaJson = await deleteTaqueriaResponse.json()
-      // console.log("deleteTaqueriaJson", deleteTaqueriaJson)
-      this.setState({
-        taquerias: this.state.taquerias.filter(taqueria => taqueria.id != idOfTaqueriaToDelete)
-      })
-
-    } catch (error) {
-      console.log("error - unable to delete taq")
-      console.log(error)
-    }
-  }
 
   editTaqueria = async (idOfTaqueriaToEdit) => {
     console.log("Here is the taq you are trying to edit:", idOfTaqueriaToEdit)
@@ -161,8 +165,8 @@ export default class TaqueriaContainer extends Component {
           <EditTaqueriaForm 
             key={this.state.idOfTaqueriaToEdit}
             taqueriaToEdit={this.state.taquerias.find((taqueria) => taqueria.id === this.state.idOfTaqueriaToEdit)}
-            closeModal={this.closeModal}
             updateTaqueria={this.updateTaqueria}
+            closeModal={this.closeModal}
           /> 
         }
       
