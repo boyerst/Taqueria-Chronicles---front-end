@@ -10,7 +10,7 @@ export default class TaqueriaContainer extends Component {
 
     this.state = {
       taquerias: [],
-      idOfTaqueriaToEdit: -1
+      idOToEdit: -1
     }
   }
 
@@ -26,8 +26,8 @@ export default class TaqueriaContainer extends Component {
       console.log(url)
       const taqueriasResponse = await fetch(url, {
         credentials: 'include',
-        // headers: {
-        //   // 'Content-Type': 'application/json',
+        headers: {
+          'Content-Type': 'application/json'
         //   'Accept': 'application/json'
         //   // 'Authorization' : 'curl --anyauth'
         // },
