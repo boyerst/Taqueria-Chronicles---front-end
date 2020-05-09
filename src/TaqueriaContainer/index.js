@@ -70,7 +70,7 @@ export default class TaqueriaContainer extends Component {
     console.log("This is the Taq that you are trying to create:")
     console.log(taqueriaToAdd)
     try {
-      const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias/"
+      const url = process.env.REACT_APP_API_URL + "/api/v1/taquerias"
 
       const createTaqueriaResponse = await fetch(url, {
         credentials: 'include',
