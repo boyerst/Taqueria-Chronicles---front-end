@@ -10,7 +10,7 @@ export default class TaqueriaContainer extends Component {
 
     this.state = {
       taquerias: [],
-      idOToEdit: -1
+      idOfTaqueriaToEdit: -1
     }
   }
 
@@ -55,7 +55,7 @@ export default class TaqueriaContainer extends Component {
       })
       console.log("deleteTaqueriaResponse", deleteTaqueriaResponse)
       const deleteTaqueriaJson = await deleteTaqueriaResponse.json()
-      // console.log("deleteTaqueriaJson", deleteTaqueriaJson)
+      console.log("deleteTaqueriaJson", deleteTaqueriaJson)
       this.setState({
         taquerias: this.state.taquerias.filter(taqueria => taqueria.id != idOfTaqueriaToDelete)
       })
