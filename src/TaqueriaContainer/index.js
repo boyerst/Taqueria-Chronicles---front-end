@@ -74,10 +74,10 @@ export default class TaqueriaContainer extends Component {
 
       const createTaqueriaResponse = await fetch(url, {
         credentials: 'include',
-        method: 'POST'
-        // headers: {
-        //   'Content-Type': 'application/json'
-        // },
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(taqueriaToAdd)
       })
       const createTaqueriaJson = await createTaqueriaResponse.json()
