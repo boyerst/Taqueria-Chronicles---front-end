@@ -5,6 +5,8 @@ import '../index.css'
 export default class EditTaqueriaForm extends Component {
   constructor(props) {
     super(props)
+    console.log(props)
+    console.log("here is props on EditTaq form")
     this.state = {
       name: props.taqueriaToEdit.name,
       address: props.taqueriaToEdit.address,                            
